@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToDoListComponent } from './to-do-list.component';
 
-// import { provideStore } from '@ngrx/store';
 import { StoreModule } from '@ngrx/store';
 
 import { items, selectedItem } from './items';
@@ -20,10 +19,7 @@ import { FormsModule } from '@angular/forms';
     // { items, selectedItem } 
     // { items: items, selectedItem: selectedItem }
     // { storeName : Reducer }
-    StoreModule.provideStore({ 
-      items: items, 
-      selectedItem: selectedItem 
-    }), // The store that defines our app state,
+    StoreModule.provideStore({ items, selectedItem }), // The store that defines our app state,
     FormsModule
   ],
   providers: [

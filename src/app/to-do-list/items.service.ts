@@ -7,7 +7,6 @@ export class ItemsService {
     items: Observable<Array<Item>>;
     constructor(private store: Store<AppStore>) {
         this.items = store.select('items'); // Bind an observable of our tasks to "ItemsService"
-        console.log('constructor', this.items);
     }
 
     loadItems() {

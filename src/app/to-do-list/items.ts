@@ -17,22 +17,16 @@ export interface AppStore {
     selectedItem: Item; // also as a initialState
 }
 
-// // The "items" reducer performs actions on our list of items
-// export const items = (state: any = [], {type, payload}) => {
-//   switch (type) {
-//     default:
-//       return state;
-//   }
-// };
-
 // T will restrict the return type
 // export interface Reducer<T> {
 //     (state: T, action: Action): T;
 // }
 
+// cannot use lamdba
+// export const items = (state: any = [], {type, payload}) => {
 // export const items: Reducer<Item[]> = (state:Item[] = [], {type, payload}) => {
 export function items(state: Item[] = [], action: Action) {
-    console.log('itemsReducer', state, action);
+    // console.log('itemsReducer', state, action);
 
     switch (action.type) {
         case 'ADD_ITEMS':
@@ -60,10 +54,9 @@ export function items(state: Item[] = [], action: Action) {
     }
 }
 
-
 // The "selectedItem" reducer handles the currently selected item
 export function selectedItem (state: any = null, {type, payload}) {
-    console.log('selectedItem', state, type, payload);
+    // console.log('selectedItem', state, type, payload);
     switch (type) {
         case 'SELECT_ITEM':
             // in this action, payload contain new state

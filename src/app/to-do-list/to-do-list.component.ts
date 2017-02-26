@@ -38,14 +38,12 @@ export class ToDoListComponent implements OnInit {
     // -> delegate complex operation to service, and service can reuse by others 
     this.items = itemsService.items;
 
-
-    // ??? where to init selectedItem?
     // why not access via itemsService? 
     // -> mutiple view can have difference selectedItem
     this.selectedItem = store.select('selectedItem');
-    console.log('constructor', this.selectedItem);
+    // console.log('constructor', this.selectedItem);
 
-    this.selectedItem.subscribe(v => console.log(v));
+    this.selectedItem.subscribe(v => console.log('selectedItem update', v));
     // "itemsService.loadItems" dispatches the "ADD_ITEMS" event to our store,
     // which in turn updates the "items" collection
     itemsService.loadItems();
